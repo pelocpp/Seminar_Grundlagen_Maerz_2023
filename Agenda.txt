@@ -1,10 +1,6 @@
 From C# to C++
 ==============
 
-Für 3 TN: zutreffend
-
-C++ vorhanden
-
 == Grundlegende Unterschiede in der Architektur von C++ und C#
    - Übersetzung
    - Laufzeit
@@ -69,18 +65,17 @@ C++ vorhanden
    - Verschiebesemantik
 
 
-== Hantierung von Zeigern in C++: Smart Pointer
-
-
-
-== Boxing und Unboxing (C#)
-
-   -- Warum gibt es das nicht in C++
-   -- Templates in C++ 
-
-
 Dienstag:  
 ---------
+
+== Smart Pointer
+  -- Hantierung von Zeigern in C++: Smart Pointer
+
+
+== Programmierphilosophie der STL
+  -- Container
+  -- Iteratoren
+  -- Algorithmen
 
 
 == Delegates von C# versus Lambdas von C++
@@ -92,6 +87,17 @@ Dienstag:
       --- https://github.com/pelocpp/cpp_general_examples/blob/master/Examples/EventsSourceAndSink/EventsSourceAndSink.cpp
 
 
+== C# Schnittstelle IEnumerable
+   -- Pendant in C++: Das Iteratoren-Konzept
+   -- Range-Based for-Loop
+
+
+== Boxing und Unboxing (C#)
+
+   -- Warum gibt es das nicht in C++
+   -- Templates in C++ 
+
+
 == Reflection in C# vs Type Traits in C++
    -- std::is_same, std::remove_reference
 
@@ -100,15 +106,7 @@ Dienstag:
    -- Metaprogramming
 
 
-== C# Schnittstelle IEnumerable
-   -- Pendant in C++: Das Iteratoren-Konzept
-   -- Range-Based for-Loop
-
-
 == Generische Lambdas
-
-
-== Programmierphilosophie der STL
 
 
 == std::variant: Ein Ausblick in Modern C++

@@ -19,3 +19,258 @@ https://github.com/pelocpp
 https://peterloos.de
 
 // =====================================================================
+
+C++:   ===> C++ -------> .obj  ---->   .exe (ausführbares Programm)
+
+    Übersetzung:  Einmal - Übersetzung
+
+C#:    2 Phasen Übersetzung:
+
+        1 Phase:  C#   ======> IL  (Intermediate Landuage)
+        
+        2 Phase:  Runtime:  IL ====>  .exe (ausführbares Programm)
+
+    C#: Laufzeitsystem:   Garbage Collector
+
+// =====================================================================
+
+
+cout:    console output  (stdin, stdout, stderr)
+
+Unterschied '\n' versus std::endl;
+
+std::endl:   Leert internen Puffer + neue Zeile in der Ausgabe
+
+'\n':        neue Zeile in der Ausgabe
+
+// =====================================================================
+
+C#:   Wozu liegt struct in C# am Stack ????
+
+struct Size
+struct Color
+
+Würden auch Size, Color, .. - das sind "kleine Hilfsobjekte" -
+
+am Heap abgelegt werden, wäre die Performance (GC)
+
+problematisch. Deshalb kann man explizit - über die Entscheidung,
+struct zu verwenden, "kleine" Objekte am Stack ablegen.
+
+C#:   Size aSize = new Size ( paramter ); // new irritiert
+
+
+// =====================================================================
+
+C++:
+
+Hat 2 Facetten:
+
+a) Stack-Based  // Value basiert // Wert basiert
+
+b) Heap-Based   // Referenz basiert // Zeiger
+
+
+// =====================================================================
+
+C++:   Stack Versus Heap
+
+Syntax:          Beispiel Klasse Time.
+
+Objekt liegt am Stack:
+
+    Time obj (...);
+    obj.print();
+
+Objekt liegt am Heap:
+
+    Time* obj = new Time (...);
+    obj->print();
+
+
+// ============================================
+
+Stack:
+
+Ist prinzipiell ein Stück Speicher.
+
+Eigenschaft:  Man kann nicht direkt darauf zugreifen.
+
+Wie erfolgt der Zugriff:
+
+Nur an einem Ende / "oben" ist wie bei einem Stapel:
+
+Hier können Werte abgelegt werden:
+
+== Assembler:  push   // pop
+
+        Wie wird das "Ende" markiert: 
+        Register SP Stack Pointer
+
+
+== C/C++:
+
+   Durch lokale Variablen: Diese werden am Stack abgelegt.
+
+
+// ============================================
+
+a) Globale Variablen -- außerhalb aller Klassen, Funktionen
+   ( Klassenvariablen )
+
+b) Lokale Variablen // Stack
+
+c) Dynamische Variablen (new) // Heap 
+
+Wo sind diese Objekte alle?
+
+zb Intel CPU:   Segment
+
+CS   Code Segment        Maschinencode
+
+DS   Data Segment        Globale Variablen
+
+SS   Stack Segment       Lokalen Variablen / Stack / Stapel
+
+ES   Extra Segment       Halde / Heap
+
+// =============================================
+
+Verwaltung eines Stacks:
+
+Stack Frame 
+
+https://www.installsetupconfig.com/win32programming/processtoolhelpapis12_1.html
+
+// =============================================
+
+Stack versus Heap:
+
+C#:  Nur Heap-basiert (Ausnahme: struct)
+
+     Genauer: Value-Types liegen am Stack
+
+C++: Stack-basiert 
+
+     UND
+
+     Heap-basiert
+
+// =============================================
+
+Wie erreiche ich den Heap:
+
+C++:  new / delete
+
+C:    malloc / free ( ähnlich )
+
+Kann ich malloc / free in C++ benutzen?
+
+Wie stehen C und C++ in Verbinding ???
+
+C ist - per Definition - in C++ enthalten !
+
+malloc allokiert "bytes" / Speicher
+
+new allokiert Objekte ( => Konstruktor, delete: Destruktor)
+
+
+Merkregel:
+
+Zu jedem new (malloc) muss es ein delete (free) geben !!!!!
+
+
+// =============================================
+
+Konstruktor
+
+Destruktor
+
+C#:  Destruktor hat nicht die große Bedeutung ,
+
+     weil der Zeitpunkt des Aufrufs "unklar" / "in der Zukunft" liegt
+
+     Folge: Resources (Socket, SqlConn => Close(), Release() )
+
+C++: Destruktor ist wichtiger:
+
+     a) delete - keinen Garbage Collector
+
+     b) Er wird deterministisch aufgerufen
+     
+        Lokalen Objekt: Beim Verlassen der Methode
+        Dynamischen Objekt: Beim Aufruf von delete
+
+// =============================================
+
+
+Time* t2: Dieser Zeiger wird als "Raw Pointer" bezeichnet.
+
+Neue Konzepte:  Smart Zeiger - "kein delete"
+
+    Genauer: Es gibt ein delete: Nur jemand "anderes" ruft das auf
+
+
+Frage:  Ich muss nicht zwingend  "Raw Pointer" verwenden.
+
+  Es ginge auch ausschließlich "Smart Zeiger"
+
+
+
+Einfaches Tool für Memory Leaks:
+
+https://github.com/pelocpp/cpp_modern_examples/blob/master/GeneralSnippets/MemoryLeaks/MemoryLeaksDetection.md
+
+// ==========================================
+
+Suche nach fehlenden detetes:   Death March
+
+// ==========================================
+
+direkten vs. indirekter Zugriff:
+
+n = 456;   // direkten Zugriff
+00007FF6EA4B2E0C  mov         dword ptr [n],1C8h  
+
+    *ip = 789; // Indirekter Zugriff ...
+00007FF6EA4B2E13  mov         rax,qword ptr [ip]  
+00007FF6EA4B2E17  mov         dword ptr [rax],315h  
+
+// ==========================================
+
+
+Ad4  ==> Ad8
+
+// ==========================================
+
+C#:   Referenz ist ein Doppel-Pointer ? 
+
+      Verschieben // Defragmentierung
+
+Heap: Arena  // Arenen  
+
+Arena für Lang-lebende Objekte ===> einmal hingeschoben
+
+Arena für kurz-lebende Objekte ===> zu Anfangs
+
+Dritte Arena "in der Mitte"
+
+Time t1 = new Time ();
+
+Time t2 = new Time();
+
+t1 = t2;
+
+--------------------------
+
+int n;
+int m;
+
+int& rn = n;
+
+int& rm = m;
+
+rn = rm;
+
+
+// ==========================================

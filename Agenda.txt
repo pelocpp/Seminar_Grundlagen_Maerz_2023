@@ -1,0 +1,108 @@
+From C# to C++
+==============
+
+Für 3 TN: zutreffend
+
+C++ vorhanden
+
+== Grundlegende Unterschiede in der Architektur von C++ und C#
+   - Übersetzung
+   - Laufzeit
+   - Paradigmen (OO, GP, Funtional)
+
+
+== Organisation Quellcode
+   - Header und Implementierungsdateien
+
+
+== Lage der Daten: Stack versus Heap
+
+   - Unterschiede / Analogien in der Syntax und in der Ausführung
+
+
+== Hantierung von Pointern und Referenzen in C++
+
+   - Referenzen in C++
+   - https://isocpp.org/wiki/faq/references
+   - Stehen nicht direkt mit new in Zusammenhang
+   - Funktion swap
+
+
+== Arrays in C/C++ (std::array)
+
+
+== Worin sind C/C++ und C# recht / nahezu ähnlich:
+
+   - Zugriffsklassen private, public, protected ...
+   - Überladen von Operatoren (2 Varianten / friend)
+   - Überladen von Methoden
+   - Properties / getter/setter
+
+
+== Vererbung
+
+   - Gemeinsamkeiten: Grundlegende Konzepte wie
+     -- "eine Klasse spezialisieren" 
+     -- Methoden überschreiben
+     -- virtueller Methodenaufrufmechanismus
+     -- Schlüsselwörter override, virtual, final (C++)
+     -- Abstrakte Klassen / interfaces (Schnittstellenkonzept)
+        (Unterschiede in der Notation)
+
+   - Unterschiede:
+     -- Universelle Basisklasse Object
+     -- Davon abgeleitete Konzepte wie toString, equals
+     -- ICloneable, IEnumerable, IComparer
+
+
+== Wodurch unterscheiden sich C/C++ und C# fundamental:
+
+   - Lebenszyklus C++ Objekt
+   - Konstruktor / Destruktor
+   - Kopieren eines Objekts
+   - Wertzuweisung eines Objekts
+ 
+   - Kopierbarkeit eines Objekts
+   - Verschiebbarkeit eines Objekts
+
+   - Kopiersemantik
+   - Verschiebesemantik
+
+== Boxing und Unboxing (C#)
+
+   -- Warum gibt es das nicht in C++
+   -- Templates in C++ 
+
+
+== Delegates von C# versus Lambdas von C++
+
+   -- Lambdas in C++
+   -- Ereignisse in C++ (Observer-Pattern)
+      --- Beispiel in Design Pattern
+          oder
+      --- https://github.com/pelocpp/cpp_general_examples/blob/master/Examples/EventsSourceAndSink/EventsSourceAndSink.cpp
+
+
+== Reflection in C# vs Type Traits in C++
+   -- std::is_same, std::remove_reference
+
+
+== Hantierung von Typ-Informationen in C++
+   -- Metaprogramming
+
+
+== C# Schnittstelle IEnumerable
+   -- Pendant in C++: Das Iteratoren-Konzept
+   -- Range-Based for-Loop
+
+
+== Hantierung von Zeigern in C++: Smart Pointer
+
+
+== Generische Lambdas
+
+
+== Programmierphilosophie der STL
+
+
+== std::variant: Ein Ausblick in Modern C++

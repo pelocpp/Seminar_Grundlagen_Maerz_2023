@@ -1,0 +1,21 @@
+// =====================================================================
+// Notizzettel.txt
+// =====================================================================
+
+Grundlagenseminar C++ / Firmenseminar ISO GmbH Nürnberg
+
+Peter Loos / Du
+
+30 Jahre // Entwicklung // Aus- / Weiterbildung
+
+C/C++, Java, C#, JavaScript, Mobile Programming
+
+peter.loos@gmx.de
+
+WebPräsenz:
+
+https://github.com/pelocpp
+
+https://peterloos.de
+
+// =====================================================================

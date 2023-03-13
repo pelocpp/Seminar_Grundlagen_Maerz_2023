@@ -9,5 +9,11 @@ public:
     Time();
     Time(int second, int minute, int hour);
 
+    // getter / setter
+    int getHour() { return m_hour; }
+    int getMinute();
+
+    int DifferenceInSeconds(const Time& other) const;
+
     void print();
 };

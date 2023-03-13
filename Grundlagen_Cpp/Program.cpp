@@ -16,9 +16,38 @@
 // forward declaration
 void StackVersusHeap();
 void PointerAndReferences();
+void testSwap();
 
 // globales Objekt
 Time ende (17, 0, 0);
+
+int main_time()
+{
+    Time now(14, 15, 0);
+
+    Time later(17, 0, 0);
+
+    now = later;
+
+    int hoursLater = later.getHour();
+
+    int diff = now.DifferenceInSeconds(later);
+
+    return 0;
+}
+
+
+
+
+int main_die_Zweite()
+{
+    _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+
+    testSwap();
+
+    return 0;
+}
+
 
 int main_die_erste ()
 {
@@ -33,14 +62,6 @@ int main_die_erste ()
     return 0;
 }
 
-int main()
-{
-    _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
-
-    PointerAndReferences();
-
-    return 0;
-}
 
 void Unterprogramm()
 {

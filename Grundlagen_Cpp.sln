@@ -8,7 +8,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{453675EE-FABF-4C97-8A0D-90F038ADDA8A}"
 	ProjectSection(SolutionItems) = preProject
 		Agenda.txt = Agenda.txt
+		Defrag.png = Defrag.png
 		Notizzettel.txt = Notizzettel.txt
+		Pointer.png = Pointer.png
+		ReferencesCompared.png = ReferencesCompared.png
 		StackVsHeap.png = StackVsHeap.png
 	EndProjectSection
 EndProject

@@ -24,3 +24,20 @@ void Time::print()
         << m_minute << ":" 
         << m_second << '\n';
 }
+
+int Time::getMinute()
+{
+    return m_minute;
+}
+
+int Time::DifferenceInSeconds (const Time& other) const 
+{
+    // that's wrong
+    // other.m_hour = 12;
+    int tmp = other.m_hour;
+
+    // m_hour = 12;
+
+    // very, very simple ... and mostly WRONG
+    return 3600;
+}

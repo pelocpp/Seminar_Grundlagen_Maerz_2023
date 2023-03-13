@@ -24,9 +24,21 @@
     <ClCompile Include="PointerVersusReferences.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="BigData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProgramBigData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Calculator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Time.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BigData.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

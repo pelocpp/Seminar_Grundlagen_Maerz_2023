@@ -68,10 +68,19 @@ C++ vorhanden
    - Kopiersemantik
    - Verschiebesemantik
 
+
+== Hantierung von Zeigern in C++: Smart Pointer
+
+
+
 == Boxing und Unboxing (C#)
 
    -- Warum gibt es das nicht in C++
    -- Templates in C++ 
+
+
+Dienstag:  
+---------
 
 
 == Delegates von C# versus Lambdas von C++
@@ -94,9 +103,6 @@ C++ vorhanden
 == C# Schnittstelle IEnumerable
    -- Pendant in C++: Das Iteratoren-Konzept
    -- Range-Based for-Loop
-
-
-== Hantierung von Zeigern in C++: Smart Pointer
 
 
 == Generische Lambdas

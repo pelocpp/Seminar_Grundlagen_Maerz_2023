@@ -274,3 +274,153 @@ rn = rm;
 
 
 // ==========================================
+
+Parameter-Übergabe:
+
+Call-by-Value:  Es werden WERTE (Kopie) an ein 
+                Unterprogramm übergeben
+
+// =========================================
+
+    int tmp = *n;
+00007FF73BB83BB4  mov         rax,qword ptr [n]  
+00007FF73BB83BBB  mov         eax,dword ptr [rax]  
+00007FF73BB83BBD  mov         dword ptr [tmp],eax  
+    *n = *m;
+00007FF73BB83BC0  mov         rax,qword ptr [n]  
+00007FF73BB83BC7  mov         rcx,qword ptr [m]  
+00007FF73BB83BCE  mov         ecx,dword ptr [rcx]  
+00007FF73BB83BD0  mov         dword ptr [rax],ecx  
+    *m = tmp;
+00007FF73BB83BD2  mov         rax,qword ptr [m]  
+00007FF73BB83BD9  mov         ecx,dword ptr [tmp]  
+00007FF73BB83BDC  mov         dword ptr [rax],ecx  
+
+versus
+
+    int tmp = n;
+00007FF73BB83AF4  mov         rax,qword ptr [n]  
+00007FF73BB83AFB  mov         eax,dword ptr [rax]  
+00007FF73BB83AFD  mov         dword ptr [tmp],eax  
+    n = m;
+00007FF73BB83B00  mov         rax,qword ptr [n]  
+00007FF73BB83B07  mov         rcx,qword ptr [m]  
+00007FF73BB83B0E  mov         ecx,dword ptr [rcx]  
+00007FF73BB83B10  mov         dword ptr [rax],ecx  
+    m = tmp;
+00007FF73BB83B12  mov         rax,qword ptr [m]  
+00007FF73BB83B19  mov         ecx,dword ptr [tmp]  
+00007FF73BB83B1C  mov         dword ptr [rax],ecx 
+
+// ==================================================
+
+https://wandbox.org/
+
+// ==================================================
+
+https://en.cppreference.com/w/cpp/language/pimpl
+
+"Pointer to implementation" or "pImpl"
+is a C++ programming technique
+that removes implementation details
+of a class from its object representation
+by placing them in a separate class,
+accessed through an opaque pointer.
+
+opaque == undurchsichtig
+
+// ==================================================
+
+"Ich weiß es nicht":
+
+UB -- Undefined Bevaviour
+
+// ==================================================
+
+C++
+
+    BigData data (100);             // Stack
+
+    BigData anotherData(100);       // Stack
+
+    data = anotherData;             // Wertzuweisung
+
+C#
+
+    BigData data = new BigData(100);          // Heap
+
+    BigData anotherData = new BigData(100);   // Heap
+
+    data = anotherData; 
+
+Ablauf:
+
+... F80
+
+... 050     // wird freigegeben
+
+Bobachtung 1:   Der Zeiger ... F80 ist verloren gegangen (delete ?????)
+
+
+
+Wir wird ein operator= realisiert ?
+
+Intuitiv:
+
+n = m;
+
+Neues Beispiel:
+
+... F80  // wird freigegeben
+
+... C20  // wird freigegeben
+
+... F80  // wird freigegeben
+
+
+
+// ===================================================
+
+Fundament von C++:
+
+Rule - of - Zero:
+
+Wann kann / sollte ich diese anwenden:
+
+====> Wenn ich in der Klasse KEINE Daten mit NEW
+      allokiert habe.
+
+--------------------------------------------------
+
+Rule - of - Three // Big - Three:
+
+== Destruktor
+== Wertzuweisungsoperator ( operator= ) 
+== Kopier-Konstruktor
+
+// ===================================================
+
+C++: 
+
+== OO: Object-Oriented Programming
+
+== GP: Generic Programming
+
+== FP: Functional Programming (F#)
+
+Warum machen wir GP: Weil die STL
+  (Standard Template Library)
+  eine rein generische Bibliothek ist.
+
+
+Abbildung:
+
+3 Ebenen der GP:
+
+https://github.com/pelocpp/cpp_modern_examples/blob/master/GeneralSnippets/TemplateClassBasics/TemplatesClassBasics.md
+
+
+// ===================================================
+
+Templates:     Partielle Spezialisierung
+

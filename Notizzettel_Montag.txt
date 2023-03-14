@@ -20,6 +20,28 @@ https://peterloos.de
 
 // =====================================================================
 
+Literatur zu Compilerbau: 
+
+Compilerbau: Eine Einführung (Leitfäden der angewandten Mathematik und Mechanik - Teubner Studienbücher)
+von Niklaus Wirth
+
+-----------------------------
+
+"Compiler Design in C" mit Lex, Yacc
+
+https://holub.com/
+
+-----------------------------
+
+LCC Compiler
+
+https://www.amazon.com/Retargetable-Compiler-Design-Implementation/dp/0805316701
+
+
+
+// =====================================================================
+
+
 C++:   ===> C++ -------> .obj  ---->   .exe (ausführbares Programm)
 
     Übersetzung:  Einmal - Übersetzung

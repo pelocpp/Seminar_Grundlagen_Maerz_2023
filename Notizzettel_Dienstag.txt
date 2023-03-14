@@ -167,3 +167,51 @@ Capacity: Der intern vorhandene Speicherplatz
 Ist er erschöpft (voll), wird um den Faktor 1.5 vergrößert.
 
 Warum 1.5:  Erfahrungswert // Heuristik
+
+// ===================================================
+
+Iteratoren - Konzept:
+
+A) Jeder Container MUSS 2 Methoden haben:
+
+   begin()
+   end()
+
+   Diese liefern Iteratoren-Objekte zurück.
+
+   begin(): Spezifiziert das erste Element des Containers.
+   end(): Spezifiziert das letzte Element des Containers:
+
+           Exakter: Das Element "danach".
+
+b) Was MUSS ein Iteratoren-Objekt haben:
+
+operator++
+
+*operator
+
+operator== oder / und operator!=
+
+
+// ================================================
+
+Frage der Performance:
+
+int n = ++i;  // Hier wird inkrementiert.
+
+vs
+
+// i == 3
+
+int n = i++; // Hier wird inkrementiert und eine Kopier (vorher) erstellt.
+             // Die Kopie wird zurück geliefert.
+
+n == 3;
+
+// ===================================================
+
+Funktor:
+
+Function Object:
+
+Aufrufbares Objekt

@@ -424,3 +424,29 @@ https://github.com/pelocpp/cpp_modern_examples/blob/master/GeneralSnippets/Templ
 
 Templates:     Partielle Spezialisierung
 
+// ===================================================
+
+Style Guide:
+
+https://google.github.io/styleguide/cppguide.html
+
+
+Literatur zu Design Pattern in C++:
+
+https://github.com/pelocpp/cpp_design_patterns/blob/master/Resources/Readme_07_Literature.md
+
+Zu C++:
+
+Onine:
+
+https://refactoring.guru/design-patterns/examples
+
+
+Blog:
+
+http://www.vishalchovatiya.com/what-is-design-pattern/
+
+Blog zu C++:
+
+http://www.vishalchovatiya.com/
+

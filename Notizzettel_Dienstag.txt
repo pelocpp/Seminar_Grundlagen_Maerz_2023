@@ -1,0 +1,169 @@
+// =====================================================================
+// Notizzettel.txt
+// =====================================================================
+
+Zweiter Tag:
+
+// =====================================================================
+
+Zeiger:
+
+Gibt es zunächst wie in C:
+
+int* ip;
+
+Frage: Verwaltung des Zeigers:   
+
+Wer gibt den Zeiger frei ?????????????
+
+Alternativen:
+
+Idee:
+
+== Zeiger
+
+== Hüllenobjekt // Hüllenklasse
+
+== OO: Konstruktor / Destruktor
+
+== Ein Destruktor-Aufruf ist deterministisch.
+   (Ein delete-Aufruf ist NICHT deterministisch)
+
+== Ansatz: Konstruktor -> new
+           Destruktor  -> delete 
+
+== Hüllenobjekt: (Global), (dynamisch/new)
+
+                  Lokal / Stack: 
+
+// Hülle == Box / hier: mit nur EINER member Var: pointer
+
+Realisierung: auto_ptr   deprecated
+
+2 Realisierung:
+
+== std::unique_ptr
+
+== std::shared_ptr
+
+Eigenschaften:
+
+== std::unique_ptr
+
+   Ein std::unique_ptr Objekt kann zu EINEM Zeitpunkt
+   im Programm nur EINEN Besitzer haben.
+
+== std::shared_ptr
+
+   Ein std::shared_ptr Objekt kann zu EINEM Zeitpunkt
+   im Programm MEHRERE Besitzer haben.
+
+   ==> Wer ruft dann delete auf ???
+   ==> Es werden die Besitzer des Zeigers mitgezählt
+       Reference Counter
+   ==> Wenn der Reference Counter = 0 : delete
+
+ // ====================================================
+
+ Ab C++ 11:
+
+ Regel der 3:    Kopier - Semantik
+    
+
+ Destruktor
+ Kopier-Kontruktor
+ Wertzuweisung
+
+
+
+Regel der 5:    Move - Semantik
+
+Verschiebe-Konstruktor
+Verschiebe - Wertzuweisung
+
+// ====================================================
+
+Vergleich std::unique_ptr <===> std::shared_Ptr:
+
+Vorzug:
+
+std::unique_ptr 
+
+Warum:
+
+A) Kommt einem klassischen Zeiger am Nächsten.
+
+B) std::shared_Ptr: Ist bzgl. Performance aufwendiger:
+
+   -- counter ++;   oder counter --; 
+      
+      Das muss atomar sein: Muss mit Mutex geschützt sein.
+
+C) std::shared_ptr:  Funktioniert nicht immer :-)))))))))))
+
+   Problem: Zyklen // Gegenseitige Verzeigerung
+
+   std::weak_ptr
+
+   std::weak_ptr.lock ===> Shared_Ptr ODER nullptr
+
+   https://github.com/pelocpp/cpp_modern_examples/blob/master/GeneralSnippets/WeakPtr/StdWeakPtr.md
+
+
+===========================================
+
+Frage:  C#:
+
+picOneFaceUpA.MouseClick +=
+  new MouseEventHandler(your_event_handler);
+
+picOneFaceUpA.MouseClick -=
+  new MouseEventHandler(your_event_handler);
+
+===========================================
+
+STL:
+
+Bibliothek für C++
+
+===> GP
+
+Bjarne Stroustrup :   C++   (  Classes for C  )
+
+Alexander Stepanov:   Generic Programming
+
+===> Bibliothek
+
+Schlagwörter der STL:
+
+== Container
+
+   Array (dicht) // std::vector
+
+   Dictionary // std::unordered_map
+
+   Bäume // Trees // // std::map  
+
+   Listen // std::forward_list
+
+Einheitliches Aussehen: size(),  operator[], at, ...
+
+== Funktionen für Container:  Algorithmen
+
+  for_each, find, find_if, copy, copy_if, fill, 
+
+== Definition einer Position in einem Container:
+
+   Iterator:   Konzept beschrieben  
+
+   Vereinbarungen:  typedefs   // using 
+
+   NICHT durch reale Klassennamen.
+
+std::vector:
+
+Capacity: Der intern vorhandene Speicherplatz
+
+Ist er erschöpft (voll), wird um den Faktor 1.5 vergrößert.
+
+Warum 1.5:  Erfahrungswert // Heuristik

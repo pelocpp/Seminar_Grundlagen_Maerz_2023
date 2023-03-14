@@ -133,6 +133,10 @@
     <ClCompile Include="Program.cpp" />
     <ClCompile Include="ProgramBigData.cpp" />
     <ClCompile Include="Time.cpp" />
+    <ClCompile Include="WeGoSTL.cpp" />
+    <ClCompile Include="Zeiger.cpp" />
+    <ClCompile Include="Zeiger_Shared.cpp" />
+    <ClCompile Include="Zeiger_Unique.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BigData.h" />

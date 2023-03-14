@@ -9,10 +9,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		Agenda.txt = Agenda.txt
 		Defrag.png = Defrag.png
-		Notizzettel.txt = Notizzettel.txt
+		Kopier_Problematik.png = Kopier_Problematik.png
+		Notizzettel_Dienstag.txt = Notizzettel_Dienstag.txt
 		Pointer.png = Pointer.png
+		Notizzettel_Montag.txt = Notizzettel_Montag.txt
 		ReferencesCompared.png = ReferencesCompared.png
+		Referfences01.png = Referfences01.png
 		StackVsHeap.png = StackVsHeap.png
+		Swap_01.png = Swap_01.png
+		Swap_02.png = Swap_02.png
+		Wertzuweisung.png = Wertzuweisung.png
 	EndProjectSection
 EndProject
 Global

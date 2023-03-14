@@ -77,6 +77,8 @@ Dienstag:
   -- Iteratoren
   -- Algorithmen
 
+== auto
+
 
 == Delegates von C# versus Lambdas von C++
 

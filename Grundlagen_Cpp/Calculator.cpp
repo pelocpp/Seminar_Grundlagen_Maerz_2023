@@ -50,10 +50,12 @@ public:
     static double div(double x, double y) { return x / y; }
 };
 
-int main()
+int main_calculator()
 {
     int result = Calculator<int>::div(3, 4);
 
     double dresult = Calculator<double>::add(3.3, 4.4);
+
+    return 1;
 }
 

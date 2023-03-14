@@ -17,6 +17,7 @@
 void StackVersusHeap();
 void PointerAndReferences();
 void testSwap();
+void test_problem_shared();
 
 // globales Objekt
 Time ende (17, 0, 0);
